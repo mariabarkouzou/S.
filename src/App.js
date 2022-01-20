@@ -1,10 +1,10 @@
-import Navbar from "./components/Navbar";
+import Navbar1 from "./components/Navbar1";
 import Footer from "./components/Footer"
 import Hero from "./components/Hero"
 function App() {
   return (
     <div className="App">
-     <Navbar/>
+     <Navbar1/>
      <Hero/>
      <Footer/>
     </div>

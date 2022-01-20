@@ -79,18 +79,7 @@ export default function Navbar() {
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div className="relative flex items-center justify-between h-16">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-700">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
+            <div className="relative flex items-center justify-between h-16"> 
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
                 <div className="flex-shrink-0 flex items-center">
                   <img
@@ -112,9 +101,9 @@ export default function Navbar() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-black text-yellow underline decoration-4 underline-offset-8 lg:text-lg md:text-sm"
+                            ? "bg-black text-yellow font-extra-bold underline underline-offset-8 lg:text-lg md:text-sm"
                             : "text-white",
-                          "px-3 py-2 rounded-md z-10 lg:text-lg md:text-sm"
+                          "px-3 py-2 rounded-md z-10 font-extra-bold lg:text-lg md:text-sm"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -124,18 +113,31 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center  sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <p className="hidden md:block md:text-lg text-white p-4 text-xl">
+              <div className="flex gap-2">
+                <p className="hidden md:block font-extrabold md:text-lg text-white mt-1 text-xl">
                   EN <span className="text-gray-200">| GR</span>
                 </p>
 
                 <button
                   type="button"
-                  className="bg-black p-1 text-white hover:text-white"
+                  className="bg-black p-1 text-white right-0 hover:text-white"
                 >
                   <span className="sr-only">Search</span>
-                  <SearchIcon className="h-8 w-8" aria-hidden="true" />
+                  <SearchIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
+                </div>
+              <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-700">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center  sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">

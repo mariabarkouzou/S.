@@ -12,14 +12,16 @@ module.exports = {
       },
     },
     fontSize: {
-      'base': '1rem',
-      'sm': '0.875rem',
-      'lg': '1.125rem',
-      'xl': '2.375rem',
+      'base': '1rem', //18px
+      'sm': '0.875rem',//16px
+      'lg': '1.125rem',//24px
+      'xl': '2.375rem',//38px
      
     },
     fontWeight: {
-      'extra-light':  '100',
+      'normal':  '400',
+      'medium': '500',
+      'extra-bold': '800',
     },
     extend: {},
   },
