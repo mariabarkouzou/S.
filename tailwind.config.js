@@ -11,6 +11,16 @@ module.exports = {
         200:"#858585",
       },
     },
+    fontSize: {
+      'base': '1rem',
+      'sm': '0.875rem',
+      'lg': '1.125rem',
+      'xl': '2.375rem',
+     
+    },
+    fontWeight: {
+      'extra-light':  '100',
+    },
     extend: {},
   },
   plugins: [],
