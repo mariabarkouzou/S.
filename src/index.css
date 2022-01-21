@@ -6,3 +6,8 @@ html{
   font-family: 'Montserrat', sans-serif;
 }
 
+hr{
+  width: 90%;
+  margin:auto;
+  color:white;
+}

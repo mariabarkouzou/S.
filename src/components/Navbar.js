@@ -101,9 +101,9 @@ export default function Navbar() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-black text-yellow font-extra-bold underline underline-offset-8 lg:text-lg md:text-sm"
+                            ? "bg-black text-yellow font-extra-bold underline underline-offset-8 lg:text-base md:text-sm"
                             : "text-white",
-                          "px-3 py-2 rounded-md z-10 font-extra-bold lg:text-lg md:text-sm"
+                          "px-3 py-2 rounded-md z-10 font-extra-bold lg:text-base md:text-sm"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -190,15 +190,7 @@ export default function Navbar() {
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
               ))}
-              <ul className="flex space-x-4 sm:space-x-4 font-bold text-white">
-            <li>
-              <a href="#">Cookies.</a>
-            </li>
-            <span>|</span>
-            <li>
-              <a href="#">Privacy.</a>
-            </li>
-          </ul>
+            
             </div>
           </Disclosure.Panel>
         </>

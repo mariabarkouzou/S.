@@ -20,7 +20,7 @@ class Hero extends Component {
             : this.state.currentSlide + 1;
         this.setState({ currentSlide: newSlide });
       }
-    }, 3000);
+    }, 5000);
   }
 
   nextSlide = () => {
@@ -45,7 +45,9 @@ class Hero extends Component {
 
   render() {
     return (
-      <div className="max-w-9xl  mx-auto">
+      <div className="relative">
+     <div className="absolute h-1/2 bg-gray-100" />
+      <div className="max-w-full mx-auto">
         <div className="flex overflow-hidden relative">
           <Swipe onSwipeLeft={this.nextSlide} onSwipeRight={this.prevSlide}>
             {CarouselData.map((slide, index) => {
@@ -56,7 +58,7 @@ class Hero extends Component {
                   key={index}
                   className={
                     index === this.state.currentSlide
-                      ? "block w-full h-full object-fill"
+                      ? "block w-full  object-fill"
                       : "hidden"
                   }
                   onMouseEnter={() => {
@@ -89,6 +91,8 @@ class Hero extends Component {
           </div>
         </div>
       </div>
+      </div>
+    
     );
   }
 }

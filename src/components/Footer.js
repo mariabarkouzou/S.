@@ -1,18 +1,14 @@
 import React from "react";
 
-
-
 function Footer() {
   return (
     <div>
-      <footer className="pb-6 pt-6 bg-black text-white">
+      <footer className="bg-black text-white">
         <div className="container flex justify-between sm:items-center mx-auto space-y-4 sm:justify-between sm:space-y-0">
-          
-            <p className="flex text-sm font-normal items-center space-x-4 sm:space-x-8">
-              &copy; The standard Copywrite 2020
-            </p>
-          
-          <ul className="flex md:flex hidden font-extra-bold lg:mr-44 space-x-4 sm:space-x-4">
+          <p className="flex pl-2 text-base font-normal items-center space-x-4 sm:space-x-8">
+            &copy; The standard Copywrite 2020
+          </p>
+          <ul className="flex md:flex hidden text-middle font-extra-bold lg:mr-52 space-x-4 sm:space-x-4">
             <li>
               <a href="#">Cookies.</a>
             </li>
@@ -26,7 +22,6 @@ function Footer() {
           </div>
         </div>
       </footer>
-       
     </div>
   );
 }

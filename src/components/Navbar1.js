@@ -1,9 +1,7 @@
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { SearchIcon } from '@heroicons/react/solid'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-
-
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { SearchIcon } from "@heroicons/react/solid";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
   { name: "Main One", href: "#", current: true },
@@ -72,9 +70,8 @@ const menuNav = {
   ],
 };
 
-
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar1() {
@@ -82,76 +79,80 @@ export default function Navbar1() {
     <Disclosure as="nav" className="bg-black">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
             <div className="relative flex items-center justify-between h-16">
               <div className="flex items-center px-2 lg:px-0">
-                <div className="flex-shrink-0 flex items-center">
-                <img
+                <div className="flex flex-shrink-0 items-center">
+                  <img
                     className="block lg:hidden h-18 w-auto"
                     src="logo.svg"
                     alt="Spitogatos logo"
                   />
                   <img
-                    className="hidden lg:block h-20 w-20 mt-7 ml-10 z-10"
+                    className="hidden lg:block h-20 w-20  mt-12 z-10"
                     src="logo.svg"
                     alt="Spitogatos logo"
                   />
                 </div>
-                <div className="hidden md:block lg:ml-6">
-                  <div className="flex space-x-4">
-                  {navigation.map(item => (
+                <div className="hidden xl:ml-48 md:block md:ml-10">
+                  <div className=" flex md:space-x-4 lg:space-x-8">
+                    {navigation.map(item => (
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-black text-yellow underline decoration-4 underline-offset-8 lg:text-lg md:text-sm"
+                            ? "bg-black text-yellow  underline font-extra-bold decoration-4 underline-offset-8 lg:text-middle md:text-sm"
                             : "text-white",
-                          "px-3 py-2 rounded-md z-10 lg:text-lg md:text-sm"
+                          "z-10 font-extra-bold lg:text-middle md:text-sm hover:underline hover:text-yellow decoration-4 underline-offset-8 "
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </a>
                     ))}
-                  </div>
-                </div>
-              </div>
-              <div className="flex-1 flex lg:gap-4 lg:ml-6 lg:justify-end">
-              <p className="hidden md:block md:text-base text-white mt-1 relative lg:left-20  lg:text-lg">
+                <p className="hidden md:block lg:left-48 lg:bottom-1 md:left-10 cursor-pointer md:text-sm font-extra-bold text-white relative lg:text-normal">
                   EN <span className="text-gray-200">| GR</span>
                 </p>
-                  <label htmlFor="search" className="sr-only">
-                    Search
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 lg:left-20  pl-3 flex items-center pointer-events-none">
-                      <SearchIcon className="h-6 w-6 text-white" aria-hidden="true" />
-                   
-           
+                <label htmlFor="search" className="sr-only">
+                  Search
+                </label>
+               
+                    <SearchIcon
+                      className="relative h-6 w-6 text-white lg:left-56 3xl:mb-2 md:left-10"
+                      aria-hidden="true"
+                    />
                   </div>
                 </div>
+                 
               </div>
+              
+            
+              
               <div className="flex md:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    <XIcon
+                      className="block h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   ) : (
-                    <MenuIcon className="block h-6 w-6 text-white" aria-hidden="true" />
+                    <MenuIcon
+                      className="block h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   )}
                 </Disclosure.Button>
               </div>
               <div className="hidden lg:block lg:ml-4">
                 <div className="flex items-center">
-                  
                   {/* Profile dropdown */}
                   <Menu as="div" className="ml-4 relative flex-shrink-0">
                     <div>
                       <Menu.Button className="bg-gray-800 rounded-full flex text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span className="sr-only">Open user menu</span>
-                        
                       </Menu.Button>
                     </div>
                     <Transition
@@ -163,47 +164,7 @@ export default function Navbar1() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'block px-4 py-2 text-sm text-gray-700'
-                              )}
-                            >
-                              Your Profile
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'block px-4 py-2 text-sm text-gray-700'
-                              )}
-                            >
-                              Settings
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active ? 'bg-gray-100' : '',
-                                'block px-4 py-2 text-sm text-gray-700'
-                              )}
-                            >
-                              Sign out
-                            </a>
-                          )}
-                        </Menu.Item>
-                      </Menu.Items>
+                      
                     </Transition>
                   </Menu>
                 </div>
@@ -211,86 +172,64 @@ export default function Navbar1() {
             </div>
           </div>
 
-          <Disclosure.Panel className="lg:hidden">
+          <Disclosure.Panel className="lg:hidden bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Dashboard
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Team
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Projects
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Calendar
-              </Disclosure.Button>
+              {navigation.map(item => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current
+                      ? "text-black font-extra-bold text-xl text-center mt-4"
+                      : "text-center font-extra-bold text-black text-xl",
+                    "block px-3 py-2 rounded-md"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+              <p className="text-black p-4 text-base font-extra-bold text-center">
+                EN <span className="text-gray-100">| GR</span>
+              </p>
             </div>
-            <div className="pt-4 pb-3 border-t border-gray-700">
-              <div className="flex items-center px-5">
-                <div className="flex-shrink-0">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
-                </div>
-                <div className="ml-3">
-                  <div className="text-base font-medium text-white">Tom Cook</div>
-                  <div className="text-sm font-medium text-gray-400">tom@example.com</div>
-                </div>
-                <button
-                  type="button"
-                  className="ml-auto flex-shrink-0 bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            <div className="flex flex-wrap space-x-6 h-24 md:order-2 bg-blue items-center justify-center">
+              {menuNav.social.map(item => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-white"
                 >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </div>
-              <div className="mt-3 px-2 space-y-1">
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                >
-                  Your Profile
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                >
-                  Settings
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                >
-                  Sign out
-                </Disclosure.Button>
-              </div>
-            </div>
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                </a>
+              ))}
+          
+          </div>
+        
+          <div className="bg-blue pb-10">
+            <ul className="flex bg-blue text-white items-center justify-center text-base font-extra-bold space-x-4 sm:space-x-4">
+            <li>
+              <a href="#">Cookies.</a>
+            </li>
+            <span>|</span>
+            <li>
+              <a href="#">Privacy.</a>
+            </li>
+          </ul>
+          </div>
+         <div className="bg-blue">
+            <hr></hr> </div>
+          <div className="bg-blue flex flex-col px-5">
+          <p className="flex bg-blue text-white mt-10">S.und@themail.com</p>
+          <p className="flex bg-blue text-white">+30 210 1234 567</p>
+          <p className="flex bg-blue text-white mt-10 mb-4">  &copy; The standard Copywrite 2020</p>
+          </div>
+         
           </Disclosure.Panel>
         </>
       )}
     </Disclosure>
-  )
+  );
 }
