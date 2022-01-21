@@ -6,7 +6,7 @@ export default function Post() {
   return (
     <>
       <div className="bg-white overflow-hidden mt-10 mb-10">
-        <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
           <div className="hidden lg:block bg-gray-50 absolute top-0 bottom-0 left-3/4 w-screen" />
           <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-20 lg:max-w-none">
             <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
@@ -21,16 +21,15 @@ export default function Post() {
               </figure>
             </div>
             <div>
-              <h2 className="mt-2 text-base text-gray-100 font-extra-bold">
+              <h2 className="mt-2 lg:text-base text-gray-100 font-extra-bold text-sm">
                 Since the 1500s
               </h2>
-              <h3 className="mt-2 text-sxl font-extra-bold text-black sm:text-4xl">
+              <h3 className="mt-2 lg:text-sxl font-extra-bold text-black text-blg">
                 The standard
               </h3>
               <div className="mt-8 lg:mt-0">
                 <div className="text-base max-w-prose mx-auto lg:max-w-none">
-                  <br></br>
-                  <p className="text-middle text-black">
+                  <p className="lg:text-middle mt-5 text-base text-black">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -55,22 +54,23 @@ export default function Post() {
             <img
               className="block h-full w-full lg:w-1/2 flex-none bg-cover"
               src={imageSec}
+              alt="a pillow"
             />
-            <div className="bg-white mt-20 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div className="bg-white lg:mt-20 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
               <div className="text-black font-bold text-xl mb-2 leading-tight">
-                <h2 className="mt-2 text-base text-gray-100 font-extra-bold">
+                <h2 className="mt-2 lg:text-base text-gray-100 font-extra-bold text-sm">
                   Since the 1500s
                 </h2>
-                <h3 className="mt-2 text-sxl font-extra-bold text-black sm:text-4xl">
+                <h3 className="mt-2 lg:text-sxl font-extra-bold text-black text-blg">
                   The standard
                 </h3>
-                <p className="text-black text-middle mt-10">
+                <p className="lg:text-middle text-base text-black mt-10">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <button
                   type="button"
-                  className="mt-10 inline-flex items-center px-24 py-3 border border-transparent text-middle font-extra-bold rounded-full shadow-sm text-white bg-blue"
+                  className="mt-10 inline-flex items-center md:px-24 md:py-3 px-12 py-4 border border-transparent text-middle font-extra-bold rounded-full drop-shadow-xl text-white bg-blue"
                 >
                   Search
                 </button>

@@ -18,6 +18,7 @@ module.exports = {
       'middle': '1.125rem',//18px
       'normal': '1.375rem', //22px
       'lg': '1.5rem',//24px
+      'blg': '1.75rem', //28px
       'sxl': '2rem', //32px
       'xl': '2.375rem',//38px
     },
