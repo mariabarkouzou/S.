@@ -89,12 +89,12 @@ export default function Navbar1() {
                     alt="Spitogatos logo"
                   />
                   <img
-                    className="hidden lg:block h-20 w-20  mt-12 z-10"
+                    className="hidden lg:block h-20 w-20 mt-12 z-10"
                     src="logo.svg"
                     alt="Spitogatos logo"
                   />
                 </div>
-                <div className="hidden xl:ml-48 md:block md:ml-10">
+                <div className="hidden xl:ml-48 lg:ml-24 md:block md:ml-10">
                   <div className=" flex md:space-x-4 lg:space-x-8">
                     {navigation.map(item => (
                       <a
@@ -102,16 +102,16 @@ export default function Navbar1() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-black text-yellow  underline font-extra-bold decoration-4 underline-offset-8 lg:text-middle md:text-sm"
+                            ? "bg-black text-yellow  underline font-extra-bold decoration-4 underline-offset-8 lg:text-middle md:text-base sm:text-sm"
                             : "text-white",
-                          "z-10 font-extra-bold lg:text-middle md:text-sm hover:underline hover:text-yellow decoration-4 underline-offset-8 "
+                          "z-10 font-extra-bold lg:text-middle md:text-base sm:text-sm hover:underline hover:text-yellow decoration-4 underline-offset-8 "
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </a>
                     ))}
-                <p className="hidden md:block lg:left-48 lg:bottom-1 md:left-10 cursor-pointer md:text-sm font-extra-bold text-white relative lg:text-normal">
+                <p className="hidden md:block lg:left-48 lg:bottom-1 md:left-10 cursor-pointer md:text-base sm:text-sm font-extra-bold text-white relative lg:text-normal">
                   EN <span className="text-gray-200">| GR</span>
                 </p>
                 <label htmlFor="search" className="sr-only">
@@ -119,7 +119,7 @@ export default function Navbar1() {
                 </label>
                
                     <SearchIcon
-                      className="relative h-6 w-6 text-white lg:left-56 3xl:mb-2 md:left-10"
+                      className="relative h-6 w-6 text-white lg:left-52 3xl:mb-2 md:left-10"
                       aria-hidden="true"
                     />
                   </div>
