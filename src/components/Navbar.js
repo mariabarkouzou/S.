@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { SearchIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { SearchIcon } from "@heroicons/react/solid";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
   { name: "Main One", href: "#", current: true },
@@ -73,91 +74,109 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
+export default function Navbar1() {
   return (
     <Disclosure as="nav" className="bg-black">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div className="relative flex items-center justify-between h-16"> 
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-                <div className="flex-shrink-0 flex items-center">
+          <div className="max-w-9xl mx-auto xl:px-2 sm:px-4 2xl:px-6">
+            <div className="relative flex items-center justify-between h-16">
+              <div className="flex items-center px-2 lg:px-0">
+                <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block lg:hidden h-18 w-auto"
                     src="logo.svg"
                     alt="Spitogatos logo"
                   />
                   <img
-                    className="hidden lg:block h-20 w-20 mt-7 ml-16 z-10"
+                    className="hidden lg:block h-20 w-20 ml-10 mt-12 z-10"
                     src="logo.svg"
                     alt="Spitogatos logo"
                   />
                 </div>
-                <div className="hidden sm:block lg:mt-8 lg:mr-20 lg:ml-18">
-                  <div className="flex space-x-4">
+                <div className="hidden 2xl:ml-72 xl:ml-36 sm:block md:ml-12 sm:ml-10">
+                  <div className=" flex sm:space-x-2 md:space-x-4 lg:space-x-4 xl:space-x-8">
                     {navigation.map(item => (
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-black text-yellow font-extra-bold underline underline-offset-8 lg:text-base md:text-sm"
+                            ? "bg-black text-yellow  underline font-extra-bold decoration-4 underline-offset-8 2xl:text-middle xl:text-middle lg:text-middle md:text-sm sm:text-xsm"
                             : "text-white",
-                          "px-3 py-2 rounded-md z-10 font-extra-bold lg:text-base md:text-sm"
+                          "z-10 font-extra-bold lg:text-middle md:text-sm sm:text-xsm hover:underline hover:text-yellow decoration-4 underline-offset-8 "
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </a>
                     ))}
+                    <p className="hidden sm:block 2xl:left-48 lg:bottom-1 xl:left-28 sm:left-8 md:left-6 cursor-pointer md:text-sm sm:text-xsm font-extra-bold text-white relative lg:text-normal">
+                      EN <span className="text-gray-200">| GR</span>
+                    </p>
+                    <label htmlFor="search" className="sr-only">
+                      Search
+                    </label>
+
+                    <SearchIcon
+                      className="relative h-6 w-6 text-white cursor-pointer xl:left-24 2xl:left-52 2xl:mb-2 sm:left-8 md:left-6"
+                      aria-hidden="true"
+                    />
                   </div>
                 </div>
               </div>
-              <div className="flex gap-2">
-                <p className="hidden md:block font-extrabold md:text-lg text-white mt-1 text-xl">
-                  EN <span className="text-gray-200">| GR</span>
-                </p>
 
-                <button
-                  type="button"
-                  className="bg-black p-1 text-white right-0 hover:text-white"
-                >
-                  <span className="sr-only">Search</span>
-                  <SearchIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-                </div>
-              <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-700">
+              <div className="flex sm:hidden">
+                {/* Mobile menu button */}
+                <label htmlFor="search" className="sr-only">
+                  Search
+                </label>
+
+                <SearchIcon
+                  className="relative h-6 w-6 text-white cursor-pointer mt-2"
+                  aria-hidden="true"
+                />
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    <XIcon
+                      className="block h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                    <MenuIcon
+                      className="block h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center  sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-                {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
-                  <div></div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  ></Transition>
-                </Menu>
+              <div className="hidden lg:block lg:ml-4">
+                <div className="flex items-center">
+                  {/* Profile dropdown */}
+                  <Menu as="div" className="ml-4 relative flex-shrink-0">
+                    <div>
+                      <Menu.Button className="bg-gray-800 rounded-full flex text-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span className="sr-only">Open user menu</span>
+                      </Menu.Button>
+                    </div>
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    ></Transition>
+                  </Menu>
+                </div>
               </div>
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white h-screen">
+          <Disclosure.Panel className="lg:hidden bg-white">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map(item => (
                 <Disclosure.Button
                   key={item.name}
@@ -165,8 +184,8 @@ export default function Navbar() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "text-black text-xl text-center mt-4"
-                      : "text-center text-black text-xl",
+                      ? "text-black font-extra-bold text-xl text-center mt-4"
+                      : "text-center font-extra-bold text-black text-xl",
                     "block px-3 py-2 rounded-md"
                   )}
                   aria-current={item.current ? "page" : undefined}
@@ -174,23 +193,40 @@ export default function Navbar() {
                   {item.name}
                 </Disclosure.Button>
               ))}
-
-            <p className="text-black p-4 text-base text-center">
-                  EN <span className="text-gray-100">| GR</span>
-                </p>
+              <p className="text-black p-4 text-base font-extra-bold text-center">
+                EN <span className="text-gray-100">| GR</span>
+              </p>
             </div>
-            <div className="flex space-x-6 h-24 md:order-2 bg-blue items-center justify-center">
+            <div className="flex flex-wrap space-x-6 h-24 md:order-2 bg-blue items-center justify-center">
               {menuNav.social.map(item => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-400 hover:text-gray-300"
-                >
+                <a key={item.name} href={item.href} className="text-white">
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
               ))}
-            
+            </div>
+
+            <div className="bg-blue pb-10">
+              <ul className="flex bg-blue text-white items-center justify-center text-base font-extra-bold space-x-4 sm:space-x-4">
+                <li>
+                  <a href="#">Cookies.</a>
+                </li>
+                <span>|</span>
+                <li>
+                  <a href="#">Privacy.</a>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-blue">
+              <hr></hr>{" "}
+            </div>
+            <div className="bg-blue flex flex-col px-5">
+              <p className="flex bg-blue text-white mt-10">S.und@themail.com</p>
+              <p className="flex bg-blue text-white">+30 210 1234 567</p>
+              <p className="flex bg-blue text-white mt-10 mb-4">
+                {" "}
+                &copy; The standard Copywrite 2020
+              </p>
             </div>
           </Disclosure.Panel>
         </>

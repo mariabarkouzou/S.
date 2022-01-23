@@ -20,15 +20,20 @@ module.exports = {
       'normal': '1.375rem', //22px
       'lg': '1.5rem',//24px
       'blg': '1.75rem', //28px
+      'xlg':'1.875rem',//30px
       'sxl': '2rem', //32px
       'xl': '2.375rem',//38px
+      '2xl':'6rem',//100px
     },
     fontWeight: {
       'normal':  '400',
       'medium': '500',
       'extra-bold': '800',
     },
-    extend: {},
+    extend: { 
+      colors: {
+      'yellow': '#B4FF00',
+    },},
   },
   plugins: [],
 };
