@@ -79,7 +79,7 @@ export default function Navbar1() {
     <Disclosure as="nav" className="bg-black">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+          <div className="max-w-9xl mx-auto xl:px-2 sm:px-4 2xl:px-6">
             <div className="relative flex items-center justify-between h-16">
               <div className="flex items-center px-2 lg:px-0">
                 <div className="flex flex-shrink-0 items-center">
@@ -89,29 +89,29 @@ export default function Navbar1() {
                     alt="Spitogatos logo"
                   />
                   <img
-                    className="hidden lg:block h-20 w-20 mt-12 z-10"
+                    className="hidden lg:block h-20 w-20 ml-10 mt-12 z-10"
                     src="logo.svg"
                     alt="Spitogatos logo"
                   />
                 </div>
-                <div className="hidden xl:ml-48 lg:ml-24 md:block md:ml-10">
-                  <div className=" flex md:space-x-4 lg:space-x-8">
+                <div className="hidden 2xl:ml-72 xl:ml-36 sm:block md:ml-12 sm:ml-10">
+                  <div className=" flex sm:space-x-2 md:space-x-4 lg:space-x-4 xl:space-x-8">
                     {navigation.map(item => (
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-black text-yellow  underline font-extra-bold decoration-4 underline-offset-8 lg:text-middle md:text-base sm:text-sm"
+                            ? "bg-black text-yellow  underline font-extra-bold decoration-4 underline-offset-8 2xl:text-middle xl:text-middle lg:text-middle md:text-sm sm:text-xsm"
                             : "text-white",
-                          "z-10 font-extra-bold lg:text-middle md:text-base sm:text-sm hover:underline hover:text-yellow decoration-4 underline-offset-8 "
+                          "z-10 font-extra-bold lg:text-middle md:text-sm sm:text-xsm hover:underline hover:text-yellow decoration-4 underline-offset-8 "
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </a>
                     ))}
-                <p className="hidden md:block lg:left-48 lg:bottom-1 md:left-10 cursor-pointer md:text-base sm:text-sm font-extra-bold text-white relative lg:text-normal">
+                <p className="hidden sm:block 2xl:left-48 lg:bottom-1 xl:left-28 sm:left-8 md:left-6 cursor-pointer md:text-sm sm:text-xsm font-extra-bold text-white relative lg:text-normal">
                   EN <span className="text-gray-200">| GR</span>
                 </p>
                 <label htmlFor="search" className="sr-only">
@@ -119,7 +119,7 @@ export default function Navbar1() {
                 </label>
                
                     <SearchIcon
-                      className="relative h-6 w-6 text-white lg:left-52 3xl:mb-2 md:left-10"
+                      className="relative h-6 w-6 text-white cursor-pointer xl:left-24 2xl:left-52 2xl:mb-2 sm:left-8 md:left-6"
                       aria-hidden="true"
                     />
                   </div>
@@ -129,7 +129,7 @@ export default function Navbar1() {
               
             
               
-              <div className="flex md:hidden">
+              <div className="flex sm:hidden">
                 {/* Mobile menu button */}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white">
                   <span className="sr-only">Open main menu</span>
