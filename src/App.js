@@ -10,8 +10,8 @@ function App() {
       <Navbar />
       <Hero/>
       <Post/>
-      {/* <Contact /> */}
-      {/* <Footer/>  */}
+      <Contact />
+      <Footer/> 
     </div>
   );
 }
