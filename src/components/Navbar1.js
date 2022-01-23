@@ -111,26 +111,31 @@ export default function Navbar1() {
                         {item.name}
                       </a>
                     ))}
-                <p className="hidden sm:block 2xl:left-48 lg:bottom-1 xl:left-28 sm:left-8 md:left-6 cursor-pointer md:text-sm sm:text-xsm font-extra-bold text-white relative lg:text-normal">
-                  EN <span className="text-gray-200">| GR</span>
-                </p>
-                <label htmlFor="search" className="sr-only">
-                  Search
-                </label>
-               
+                    <p className="hidden sm:block 2xl:left-48 lg:bottom-1 xl:left-28 sm:left-8 md:left-6 cursor-pointer md:text-sm sm:text-xsm font-extra-bold text-white relative lg:text-normal">
+                      EN <span className="text-gray-200">| GR</span>
+                    </p>
+                    <label htmlFor="search" className="sr-only">
+                      Search
+                    </label>
+
                     <SearchIcon
                       className="relative h-6 w-6 text-white cursor-pointer xl:left-24 2xl:left-52 2xl:mb-2 sm:left-8 md:left-6"
                       aria-hidden="true"
                     />
                   </div>
                 </div>
-                 
               </div>
-              
-            
-              
+
               <div className="flex sm:hidden">
                 {/* Mobile menu button */}
+                <label htmlFor="search" className="sr-only">
+                  Search
+                </label>
+
+                <SearchIcon
+                  className="relative h-6 w-6 text-white cursor-pointer mt-2"
+                  aria-hidden="true"
+                />
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -163,9 +168,7 @@ export default function Navbar1() {
                       leave="transition ease-in duration-75"
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
-                    >
-                      
-                    </Transition>
+                    ></Transition>
                   </Menu>
                 </div>
               </div>
@@ -196,37 +199,35 @@ export default function Navbar1() {
             </div>
             <div className="flex flex-wrap space-x-6 h-24 md:order-2 bg-blue items-center justify-center">
               {menuNav.social.map(item => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-white"
-                >
+                <a key={item.name} href={item.href} className="text-white">
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
               ))}
-          
-          </div>
-        
-          <div className="bg-blue pb-10">
-            <ul className="flex bg-blue text-white items-center justify-center text-base font-extra-bold space-x-4 sm:space-x-4">
-            <li>
-              <a href="#">Cookies.</a>
-            </li>
-            <span>|</span>
-            <li>
-              <a href="#">Privacy.</a>
-            </li>
-          </ul>
-          </div>
-         <div className="bg-blue">
-            <hr></hr> </div>
-          <div className="bg-blue flex flex-col px-5">
-          <p className="flex bg-blue text-white mt-10">S.und@themail.com</p>
-          <p className="flex bg-blue text-white">+30 210 1234 567</p>
-          <p className="flex bg-blue text-white mt-10 mb-4">  &copy; The standard Copywrite 2020</p>
-          </div>
-         
+            </div>
+
+            <div className="bg-blue pb-10">
+              <ul className="flex bg-blue text-white items-center justify-center text-base font-extra-bold space-x-4 sm:space-x-4">
+                <li>
+                  <a href="#">Cookies.</a>
+                </li>
+                <span>|</span>
+                <li>
+                  <a href="#">Privacy.</a>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-blue">
+              <hr></hr>{" "}
+            </div>
+            <div className="bg-blue flex flex-col px-5">
+              <p className="flex bg-blue text-white mt-10">S.und@themail.com</p>
+              <p className="flex bg-blue text-white">+30 210 1234 567</p>
+              <p className="flex bg-blue text-white mt-10 mb-4">
+                {" "}
+                &copy; The standard Copywrite 2020
+              </p>
+            </div>
           </Disclosure.Panel>
         </>
       )}
