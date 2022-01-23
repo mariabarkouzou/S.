@@ -10,6 +10,7 @@ module.exports = {
         50: "#F8F8F8",
         100:"#CFCFCF",
         200:"#858585",
+        300:"#9F9F9F",
       },
     },
     fontSize: {
@@ -33,7 +34,11 @@ module.exports = {
     extend: { 
       colors: {
       'yellow': '#B4FF00',
-    },},
+    },
+    backgroundImage: {
+      'hero-pattern': "url('./bg(2).png')", 
+    }
+  },
   },
   plugins: [],
 };
