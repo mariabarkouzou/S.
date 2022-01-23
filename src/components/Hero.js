@@ -85,11 +85,11 @@ class Hero1 extends Component {
                 To take a trivial example, which of us ever undertakes laborious
                 physical exercise, except to obtain some advantage from it?
               </p>
-              <div className="2xl:mt-20 sm:mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-                <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5"></div>
+              <div className="2xl:mt-20 sm:mt-0 mt-12 lg:mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2"></div>
               </div>
             </div>
-            <div className="absolute w-full flex justify-center bottom-0 p-5 bg-gradient-to-r from-black to-gray-700">
+            <div className="absolute w-full flex justify-center bottom-0 p-5 bg-gradient-to-r from-black bg-gradient-to-l">
               {CarouselData.map((element, index) => {
                 return (
                   <div
