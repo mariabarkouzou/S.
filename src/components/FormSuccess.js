@@ -7,6 +7,10 @@ const FormSuccess = () => {
       {/* Success Section */}
       <div className="md:col-span-3">
         <div className="h-full sm:px-0">
+          <span className="z-10 2xl:inset-y-1/2 2xl:right-3/4 lg:inset-y-1/2 lg:right-3/4  md:inset-y-1/2 md:right-3/4 sm:inset-y-1/2 sm:right-3/4  inset-y-auto right-1/2 hover:text-sm absolute inline-block hover:animate-ping  2xl:hover:w-64 2xl:hover:h-64 rounded-full p-4 hover:py-14 md:hover:h-48 md:hover:w-48 md:hover:ml-20 sm:hover:h-40 sm:hover:text-sm sm:hover:w-40 md:hover:text-base hover:text-center bg-yellow text-black text-tiny hover:font-medium hover:text-normal">
+            S.und@themail.com
+            <br></br>+30 210 1234 567
+          </span>
           <img
             className="object-cover 2xl:w-full 2xl:h-full lg:h-full md:h-full sm:h-1/2"
             src={image}
