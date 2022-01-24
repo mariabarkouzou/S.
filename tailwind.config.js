@@ -14,6 +14,7 @@ module.exports = {
       },
     },
     fontSize: {
+      'tiny': '0.0125rem',//1px
       'xsm': '0.75rem',//12px
       'sm': '0.875rem',//14px
       'base': '1rem', //16px
@@ -41,7 +42,8 @@ module.exports = {
     },
     animation: {
       'spin': 'spin 0.3s',
-      'bounce': 'bounce 0.3s'
+      'bounce': 'bounce 0.3s',
+      'ping': 'ping 0.2s'
     },
   },
   },

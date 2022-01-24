@@ -6,7 +6,7 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
-const Contact1 = ({ submitForm }) => {
+const Contact = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
@@ -22,6 +22,8 @@ const Contact1 = ({ submitForm }) => {
         <div className="md:grid md:grid-cols-5 md:gap-8 bg-gray-50">
           <div className="md:col-span-2">
             <div className="h-full sm:px-0">
+              
+              <span className="z-10 2xl:inset-y-1/2 2xl:right-3/4 lg:inset-y-1/2 lg:right-3/4  md:inset-y-1/2 md:right-3/4 sm:inset-y-1/2 sm:right-3/4  inset-y-auto right-1/2 absolute inline-block hover:animate-ping  hover:w-64 hover:h-64 rounded-full p-4 bg-yellow text-black text-tiny hover:text-normal">S.und@themail.com</span>
               <img
                 className="object-cover 2xl:w-full 2xl:h-full lg:h-full md:h-full sm:h-3/4  h-3/4"
                 src={image}
@@ -256,4 +258,4 @@ const Contact1 = ({ submitForm }) => {
   );
 };
 
-export default Contact1;
+export default Contact;
