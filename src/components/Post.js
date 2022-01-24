@@ -9,15 +9,11 @@ export default function Post() {
         <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
           <div className="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-20 lg:max-w-none">
             <div className="relative text-base mx-auto max-w-prose lg:max-w-none">
-             
-        
-                  <img
-                    className="object-fill h-full w-full"
-                    src={image}
-                    alt="a woman holding a camera"
-                  />
-              
-             
+              <img
+                className="object-fill h-full w-full hover:animate-bounce"
+                src={image}
+                alt="a woman holding a camera"
+              />
             </div>
             <div>
               <h2 className="lg:mt-2 mt-5 lg:text-base text-gray-100 font-extra-bold text-sm">
@@ -26,19 +22,17 @@ export default function Post() {
               <h3 className="mt-2 lg:text-sxl font-extra-bold text-black text-blg">
                 The standard
               </h3>
-            
-                <div className="text-base max-w-prose mx-auto lg:max-w-none">
-                  <p className="lg:text-middle lg:mt-5 text-base text-black">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt.
-                  </p>
-                
+
+              <div className="text-base max-w-prose mx-auto lg:max-w-none">
+                <p className="lg:text-middle lg:mt-5 text-base text-black">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt.
+                </p>
               </div>
             </div>
           </div>
@@ -51,7 +45,7 @@ export default function Post() {
         <div className="w-full lg:w-4/6">
           <div className="flex flex-col lg:flex-row-reverse rounded overflow-hidden h-auto lg:h-full">
             <img
-              className="block h-auto w-full lg:w-1/2 flex-none bg-cover"
+              className="block h-auto w-full lg:w-1/2 flex-none bg-cover hover:animate-spin hover:rotate-180"
               src={imageSec}
               alt="a pillow"
             />

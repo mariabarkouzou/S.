@@ -34,10 +34,15 @@ module.exports = {
     extend: { 
       colors: {
       'yellow': '#B4FF00',
+      'red':' #FF1A00',
     },
     backgroundImage: {
       'hero-pattern': "url('./bg(2).png')", 
-    }
+    },
+    animation: {
+      'spin': 'spin 0.3s',
+      'bounce': 'bounce 0.3s'
+    },
   },
   },
   plugins: [],
